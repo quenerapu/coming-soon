@@ -1,0 +1,7 @@
+# El .htaccess raíz de bare_st sirve cualquier archivo existente en disco
+# directamente — sin esto, interest.log (emails de quien se apunta) sería
+# descargable con solo conocer la URL exacta. Misma protección que
+# cualquier landing_coming-soon-<site>/ de un proyecto bare_mt.
+<FilesMatch "\.log$">
+    Require all denied
+</FilesMatch>
